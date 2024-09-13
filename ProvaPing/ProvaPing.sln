@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.8.34408.163
+VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvaPing", "ProvaPing\ProvaPing.csproj", "{6D380D1B-DFD5-46E3-8750-C409F0D3A31E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "provaPing", "provaPing\provaPing.csproj", "{E33DEE22-7AFA-4CD6-9057-AD6084770185}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6D380D1B-DFD5-46E3-8750-C409F0D3A31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D380D1B-DFD5-46E3-8750-C409F0D3A31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D380D1B-DFD5-46E3-8750-C409F0D3A31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D380D1B-DFD5-46E3-8750-C409F0D3A31E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E33DEE22-7AFA-4CD6-9057-AD6084770185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E33DEE22-7AFA-4CD6-9057-AD6084770185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E33DEE22-7AFA-4CD6-9057-AD6084770185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E33DEE22-7AFA-4CD6-9057-AD6084770185}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {20F66DDF-BD96-43FB-88D7-4572B33C1667}
+		SolutionGuid = {805DD1C7-C2C5-434B-A6DE-EAFFB82C185B}
 	EndGlobalSection
 EndGlobal

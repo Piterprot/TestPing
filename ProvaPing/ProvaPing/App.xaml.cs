@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace ProvaPing
+namespace provaPing
 {
     /// <summary>
     /// Interaction logic for App.xaml
