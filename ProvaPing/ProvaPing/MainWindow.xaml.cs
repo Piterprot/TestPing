@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.NetworkInformation;
 
 namespace ProvaPing
 {
@@ -19,6 +20,31 @@ namespace ProvaPing
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Cursor = Cursors.Wait;
+            txtStatus.Text = "";
+            txtMs.Text = "";
+            string Indirizzo = txtIP.Text;
+
+
+            try
+            {
+                Ping pinger = new Ping();
+                PingReply reply = pinger.Send(Indirizzo);
+                string status = reply.Status.ToString();
+                string millisec = reply.RoundtripTime.ToString();
+                txtStatus.Text = status;
+                txtMs.Text = millisec;
+                this.Cursor = Cursors.Arrow;
+            }
+            catch (System.Net.NetworkInformation.PingException)
+            {
+                MessageBox.Show("Errore, l'host risulta sconosciuto o non raggiungibile");
+            }
+
         }
     }
 }

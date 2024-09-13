@@ -8,5 +8,15 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
+        <StackPanel>
+            <Label Content="Inserisci l'indirizzo da pingare"/>
+            <TextBox x:Name="txtIP"/>
+            <Button Content="Pinga" Click="Button_Click"/>
+            <Label Content="tempo di risposta in ms: "/>
+            <TextBox x:Name="txtMs"/>
+            <Label Content="Lo status attuale è: "/>
+            <TextBox x:Name="txtStatus"/>
+        </StackPanel>
+        
     </Grid>
 </Window>
