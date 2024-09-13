@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:provaPing"
         mc:Ignorable="d"
-        Title="Prova Ping" Height="450" Width="500" FontSize="30">
+        Title="Prova Ping" Height="450" Width="800" FontSize="30">
     <StackPanel Margin="20">
         <Label>Inserire qua sotto l'indirizzo IP</Label>
         <TextBox x:Name="txtIP" KeyDown="txtIP_KeyDown"/>
@@ -14,5 +14,7 @@
         <TextBlock x:Name="txtStatus"/>
         <Label>Tempo di Ping</Label>
         <TextBlock x:Name="txtMs"/>
+        <Image  Margin="-520, -300,0, 0 " Height="50"  x:Name="StatIcon"/>
     </StackPanel>
+    
 </Window>
