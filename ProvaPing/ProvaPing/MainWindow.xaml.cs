@@ -1,5 +1,4 @@
 ﻿using System.Net.NetworkInformation;
-using System.Runtime.Intrinsics.X86;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -20,7 +19,7 @@ namespace provaPing
 
             txtStatus.Text = "";
             txtMs.Text = "";
-
+            StatIcon.Source = null;
 
         }
         void Button_Click(object sender, RoutedEventArgs e)
@@ -45,66 +44,55 @@ namespace provaPing
                 PingReply reply = pinger.Send(Indirizzo);
                 string status = reply.Status.ToString();
                 string millisec = reply.RoundtripTime.ToString();
+                BitmapImage biError = new BitmapImage();
+                biError.BeginInit();
+                biError.UriSource = new Uri("error.png", UriKind.Relative);
+                biError.EndInit();
+
+                BitmapImage biAttention = new BitmapImage();
+                biAttention.BeginInit();
+                biAttention.UriSource = new Uri("warning.png", UriKind.Relative);
+                biAttention.EndInit();
+
+                BitmapImage biOk = new BitmapImage();
+                biOk.BeginInit();
+                biOk.UriSource = new Uri("success.png", UriKind.Relative);
+                biOk.EndInit();
+
+                StatIcon.Stretch = Stretch.Fill;
+
                 int millisecToInt = int.Parse(millisec);
                 txtStatus.Text = status;
-
-
-
-
-
-
-
-
-
-
-
                 if (status == "Success")
                 {
-                    txtStatus.Foreground = Brushes.Green;
-
-                    BitmapImage bi3 = new BitmapImage();
-                    bi3.BeginInit();
-                    bi3.UriSource = new Uri("success.png", UriKind.Relative);
-                    bi3.EndInit();
-                    StatIcon.Stretch = Stretch.Fill;
-                    StatIcon.Source = bi3;
-
-
-
-                }
-                else if (status == "TimedOut")
-                {
-                    txtStatus.Foreground = Brushes.Orange;
+                    if (reply.RoundtripTime < 50)
+                    {
+                        txtStatus.Foreground = Brushes.Green;
+                        StatIcon.Stretch = Stretch.Fill;
+                        StatIcon.Source = biOk;
+                    }
+                    else
+                    {
+                        txtStatus.Foreground = Brushes.Yellow;
+                        StatIcon.Source = biAttention;
+                    }
                 }
                 else if (millisecToInt > 50)
                 {
                     txtStatus.Foreground = Brushes.Yellow;
-                    BitmapImage bi2 = new BitmapImage();
-                    bi2.BeginInit();
-                    bi2.UriSource = new Uri("warning.png", UriKind.Relative);
-                    bi2.EndInit();
-                    StatIcon.Source = bi2;
-
-
-
+                    StatIcon.Source = biAttention;
                 }
                 else
                 {
                     txtStatus.Foreground = Brushes.Red;
-
-                    BitmapImage bi1 = new BitmapImage();
-                    bi1.BeginInit();
-                    bi1.UriSource = new Uri("error.png", UriKind.Relative);
-                    bi1.EndInit();
-                    StatIcon.Source = bi1;
-
+                    StatIcon.Source = biError;
                 }
                 txtMs.Text = millisec + " ms";
                 this.Cursor = Cursors.Arrow;
             }
-            catch(System.Net.NetworkInformation.PingException)
+            catch
             {
-                MessageBox.Show("L'indirizzo IP non risulta essere valido");
+                MessageBox.Show("L'indirizzo IP non risulta valido o risolvibile");
                 return;
             }
         }
