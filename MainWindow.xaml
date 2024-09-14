@@ -1,0 +1,20 @@
+﻿<Window x:Class="provaPing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:provaPing"
+        mc:Ignorable="d"
+        Title="Prova Ping" Height="450" Width="800" FontSize="30">
+    <StackPanel Margin="20">
+        <Label>Inserire qua sotto l'indirizzo IP</Label>
+        <TextBox x:Name="txtIP" KeyDown="txtIP_KeyDown"/>
+        <Button Content="Ping" Click="Button_Click"/>
+        <Label>Status</Label>
+        <TextBlock x:Name="txtStatus"/>
+        <Label>Tempo di Ping</Label>
+        <TextBlock x:Name="txtMs"/>
+        <Image  Margin="-520, -300,0, 0 " Height="50"  x:Name="StatIcon"/>
+    </StackPanel>
+    
+</Window>
