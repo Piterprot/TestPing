@@ -6,6 +6,24 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <SignAssembly>False</SignAssembly>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="attention.png" />
+    <None Remove="error.png" />
+    <None Remove="ok.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="attention.png" />
+    <Resource Include="error.png" />
+    <Resource Include="ok.png" />
+  </ItemGroup>
 
 </Project>

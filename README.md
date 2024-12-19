@@ -1,3 +1,2 @@
 # prova-ping
- 
-- Tool per effettuare i ping ad un nodo
+ Prova ping, sistemi e reti
